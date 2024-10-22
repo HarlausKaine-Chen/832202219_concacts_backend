@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>米奇妙妙通讯录</title>
+    <style>
+      body {
+        margin: 0;
+        height: 100vh;
+        background-color: antiquewhite;
+      }
+      * {
+        border: 1px solid black;
+      }
+      .flex {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+
+    <script src="https:unpkg.com/axios/dist/axios.min.js"></script>
+
+    <script>
+
+        var haoma = document.querySelector('.haoma');
+        var ID = document.querySelector('.ID');
+
+        axios({
+            url:'http://localhost:8081/user/'
+        }).then((result) => {
+            console.log(result);
+
+
+        haoma.value = result.data[0].haoma;
+        ID.value = result.data[0].ID;
+        })
+    </script>
+
+    <script>
+      function Tosee() {
+        var x = document.getElementById("ID").value;
+        if (x == "" || isNaN(x)) {
+          alert("请输入数字号码");
+        }
+      }
+      function Todelete() {
+        var x = document.getElementById("haoma").value;
+        if (x == "" || isNaN(x)) {
+          alert("请输入数字号码");
+        }
+      }
+      function Toadd() {
+        var x = document.getElementById("haoma").value;
+        if (x == "" || isNaN(x)) {
+          alert("请输入数字号码");
+        }
+      }
+      function Tochange() {
+        var x = document.getElementById("haoma").value;
+        if (x == "" || isNaN(x)) {
+          alert("请输入数字号码");
+        }
+      }
+
+    </script>
+    <div style="background-color: #f1f1f1; text-align: center; padding: 40px">
+      <h1>米奇妙妙通讯录</h1>
+    </div>
+    <div
+      style="
+        max-width: 700px;
+        margin: 30px auto;
+        padding: 15px;
+        line-height: 1.7;
+        color: green;
+        text-align: center;
+      "
+    >
+      <p>输入号码</p>
+      <input class="haoma" type="text" />
+      <p>输入号码位次</p>
+      <input class="ID" type="text" />
+      <button type="button" onclick="Toadd()">添加号码</button>
+      <button type="button" onclick="Tosee()">点击查看</button>
+      <p></p>
+      <button type="button" onclick="Tochange()">更改号码</button>
+      <button type="button" onclick="Todelete()">删除号码</button>
+    </div>
+
+    <div style="text-align: center">
+      <a href="./3.html">操作说明</a>
+    </div>
+
+    <div style="background-color: #f1f1f1; text-align: center; padding: 40px">
+      <p>Chen Zeyun 832202219 Lab1</p>
+    </div>
+  </body>
+</html>
