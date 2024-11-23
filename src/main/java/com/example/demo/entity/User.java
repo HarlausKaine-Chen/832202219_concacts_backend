@@ -17,9 +17,21 @@ public class User {
     @TableId(value ="id",type = IdType.AUTO)
     private Integer id;
 
-    @ApiModelProperty("密码")
+    @ApiModelProperty("其实是号码")
     private String password;
 
     @ApiModelProperty("用户名")
     private String name;
+
+    @ApiModelProperty("email")
+    private String email;
+
+    @ApiModelProperty("social_media_handles")
+    private String smh;
+
+    @ApiModelProperty("physical_address")
+    private String pa;
+
+    @ApiModelProperty("important")
+    private String important;
 }
